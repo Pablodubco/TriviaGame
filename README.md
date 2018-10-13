@@ -2,8 +2,22 @@
 
 A timed quiz "trivia" game constructed with the use of jQuery and timers with multiple configurable properties for the questions, answers, display, and scoring system. Allowing to change the theme and the target audience of the quiz.
 
+[Try it here](https://pablodubco.github.io/TriviaGame/)
+
 ## Contents
 
+* [Current implementation](#current-implementation)
+* [Implementing](#implementing)
+  + [Required HTML tags](#required-html-tags)
+  + [Required variable names](#required-variable-names)
+  + [Starting up the quiz](#starting-up-the-quiz)
+* [Modifying](#modifying)
+  + [Understanding the flow](#understanding-the-flow)
+  + [General settings](#general-settings)
+  + [Display settings](#display-settings)
+  + [Dynamic properties](#dynamic-properties)
+  + [Questions collection](#questions-collection)
+  + [Methods](#methods) (Under constrction)
 
 
 ## Current implementation
@@ -32,6 +46,12 @@ The game is self contained inside an object, but it's not completely independent
 * It requires [jQuery]() libraries for dynamically generating DOM elements.
 * The quiz object provides several properties for styling the dynamically generated elements.
 * Anything that cannot be styled by changing classes or CSS (like parent and child elements), must be edited by alering the code.
+
+**Contents**
+
+  + [Required HTML tags](#required-html-tags)
+  + [Required variable names](#required-variable-names)
+  + [Starting up the quiz](#starting-up-the-quiz)
 
 ### Required HTML tags
 
@@ -114,7 +134,14 @@ $("#btnPlay").on("click",function(){
 
 The quiz has multiple configurable settings in adition to a completely editable questions collection.
 
-* 
+**Contents**
+
++ [Understanding the flow](#understanding-the-flow)
++ [General settings](#general-settings)
++ [Display settings](#display-settings)
++ [Dynamic properties](#dynamic-properties)
++ [Questions collection](#questions-collection)
++ [Methods](#methods) (Under constrction)
 
 ### Understanding the flow
 
