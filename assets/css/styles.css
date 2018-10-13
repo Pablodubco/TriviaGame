@@ -1,0 +1,90 @@
+html { /*For sticky footer */
+    position: relative;
+    min-height: 100%;
+}
+  
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../images/background.jpg");
+    margin-bottom: 44px; /*For sticky footer */
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Nunito+Sans', sans-serif;
+    font-weight: 800;
+}
+
+.footer {/*For sticky footer*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 44px;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.udColorBrown{
+    color: brown;
+}
+
+.bg-darker{
+    background-color: rgb(15, 15, 15);
+}
+
+.carousel-inner img{
+    animation-name: fadeout;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+.udClockTest{
+    background-image:url('assets/images/clock/clockbg.jpg');
+}
+
+#FooterThinLine{
+    background-color:brown;
+    padding: 7px;
+}
+
+#FooterThickLine{
+    background-color: rgb(29, 29, 29);
+    padding: 15px;
+}
+
+#headerA{
+    animation-name: switchcolor;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+/*Animations*/
+@keyframes switchcolor{
+    0% {color: brown;}
+    15% {color: brown;}
+    35% {color: rgb(218, 165, 32);}
+    65% {color: rgb(218, 165, 32);}
+    85% {color: brown;}
+    100% {color: brown;}
+}
+
+@keyframes fadeout{
+    0% {opacity:0;}
+    50% {opacity:1;}
+    100% {opacity: 0;}
+}
+
+/*Resizing on smaller screens for buttons and selected text*/
+@media only screen and (max-width: 767px) {
+    .btn,.udResizeText{
+        font-size: small !important;
+    }
+}
+
+/*Just in case, this fixes some bugs when rendering page for printing*/
+@media print { 
+    .container {
+      width: auto;
+    }
+  }

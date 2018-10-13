@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Game</title>
+
+  <!-- Link to the jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+  <!--Fonts and icons-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito+Sans|Raleway" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+</head>
+
+<body>
+
+<!--
+    NOTE
+    User defined classes, used for custom style.css have [ud][name] syntax.
+-->
+
+<!--_________________________Navbar BEGIN____________________________-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-darker">
+        <a class="navbar-brand text-white" href="#">Trivia Game</a>
+    </nav>
+    <div id="FooterThinLine"></div>
+<!--_________________________Navbar END____________________________-->
+
+<!-- ___________________________MAIN Container BEGIN_____________________________ -->
+    <div class="container mx-auto bg-black" id="mainContainer"> 
+
+        <!-- __________________Header____________________ -->
+        <div class="row my-0 py-0">
+            <div class="col-12">
+                <h2 class="text-center text-white bg-black py-3" id="headerTxtTop"><span style="color:goldenrod">Trivi</span><span id="headerA">a</span><span style="color:brown">nimation!</span></h2>
+            </div>
+        </div>
+        <!-- __________________Select questions BEGIN____________________ -->
+        <div class="row">
+            <!-- Carousel Left -->
+            <div class="col-md-2 d-none d-md-block align-self-center">
+                <div id="carouselLeft" class="carousel" data-ride="carousel"  data-interval="1500">
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_walle_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_cars_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_iceage_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_incredibles_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_kungfupanda_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_lego_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_monters_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_nemo_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_NBC_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_ratatouille_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_shrek_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_toystory_01.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_walle_01.gif" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Select questions card -->
+            <div class="col-md-8 col-12">
+                <div class="card bg-darker mx-auto">
+                    <div class="card-body text-center">
+                        <img class="card-img-top mx-auto my-auto" src="assets/images/collage01.jpg" alt="Collage">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text text-white bg-darker" for="numberQuestions">Number of questions</label>
+                            </div>
+                            <select class="custom-select bg-black text-white text-center" id="numberQuestions">
+                                <option selected class="bg-black text-white">50, or select...</option>
+                                <option class="bg-black text-white" value="5">5</option>
+                                <option class="bg-black text-white" value="10">10</option>
+                                <option class="bg-black text-white" value="15">15</option>
+                            </select>
+                        </div>
+                        <div class="bg-darker py-5">
+                            <button type="button" class="btn btn-outline-danger w-50" id="btnPlay">Play! <i class="fa fa-play"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel right -->
+            <div class="col-md-2 d-none d-md-block align-self-center">
+                <div id="carouselRight" class="carousel" data-ride="carousel" data-interval="1500">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_ratatouille_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_shrek_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_toystory_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_walle_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_monters_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_nemo_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_NBC_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_kungfupanda_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_lego_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_cars_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_iceage_02.gif" alt="Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="assets/images/transparent/transp_incredibles_02.gif" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- __________________Select questions END____________________ -->
+        <div class="row">
+            <div class="col">
+                <h3 class="text-center text-white bg-black py-4" id="headerQuestions"><span style="color:goldenrod">Question</span><span style="color:brown"> Time!</span></h3>
+            </div>
+        </div>
+        <!-- __________________________Quiz area BEGIN__________________________________-->
+        <div class="row bg-black">
+            <div class="col-2 d-none d-md-block align-self-center colDivScore">
+                <h6 class="text-center text-white bg-dark">Score</h6>
+                <h6 class="text-center text-white bg-darker">0</h6>
+            </div>
+            <div class="col-md-8 col-12">
+                <div class="card mx-auto bg-darker">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-2 d-md-none d-block colDivScore">
+                                <div class="text-center text-white bg-dark udResizeText">Score</div>
+                                <div class="text-center text-white bg-darker udResizeText">0</div>
+                            </div>
+                            <div class="col-md-12 col-8 text-center" id="colDivQuestion">
+                                <img class="card-img-top mx-auto my-auto" src="assets/images/PlaceHolder.jpg" alt="Question Image">
+                                <p class="text-white udResizeText">Select the number of questions and press "Play" to start.</p>
+                            </div>
+                            <div class="col-2 d-md-none d-block colDivStreak">
+                                <div class="text-center text-white bg-dark udResizeText">Streak</div>
+                                <div class="text-center text-white bg-darker udResizeText">0 (x0)</div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center py-1" id="rowDivClock">
+                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
+                                <img src="assets/images/clock/0.jpg">
+                            </div>
+                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
+                                <img src="assets/images/clock/0.jpg">
+                            </div>
+                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
+                                <img src="assets/images/clock/dots_on.jpg">
+                            </div>
+                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
+                                <img src="assets/images/clock/0.jpg">
+                            </div>
+                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
+                                <img src="assets/images/clock/0.jpg">
+                            </div>
+                        </div>
+                        <div class="row" id="rowDivOptions">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-outline-danger w-100 text-left udBtnPlaceHolder" data-value="0" data-toggle="modal" data-target="#modScoreCard">Option 1</button>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-outline-danger w-100 text-left udBtnPlaceHolder" data-value="1">Option 2</button>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-outline-danger w-100 text-left udBtnPlaceHolder" data-value="2">Option 3</button>
+                            </div>
+                            <div class="col-12">
+                                <button type="button" class="btn btn-outline-danger w-100 text-left udBtnPlaceHolder" data-value="3">Option 4</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2 d-none d-md-block align-self-center colDivStreak">
+                <h6 class="text-center text-white bg-dark">Streak</h6>
+                <h6 class="text-center text-white bg-darker">0 (x0)</h6>
+            </div>
+        </div>
+    </div>
+<!-- _________________________MAIN Container END________________________________ --> 
+
+<div class="emptyBottomSpace"></div> <!--Pushes the footer down, so there's empty space for the content-->
+
+<footer class="footer">
+    <div id="FooterThinLine"></div>
+    <div class="bg-darker text-white text-center" id="FooterThickLine">Copyright ©</div>
+</footer>
+    
+<!--Game JavaScript-->
+    <script src="assets/javascript/app.js"></script>
+
+<!--Import Bootstrap JavaScript for dynamic elements-->
+    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>
