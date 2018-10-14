@@ -1060,16 +1060,16 @@ var QuizObject = {
             secTenImage = this.strClockPath+this.strClockImageOff;
             secUnitImage = this.strClockPath+this.strClockImageOff;
         }
-        var minTenDiv = $("<div>",{class:"col-1",style:"background:url("+background+")"}).append(
+        var minTenDiv = $("<div>",{class:"col-2",style:"background:url("+background+")"}).append(
             $("<img>",{src:minTenImage})
         );
-        var minUnitDiv = $("<div>",{class:"col-1",style:"background:url("+background+")"}).append(
+        var minUnitDiv = $("<div>",{class:"col-2",style:"background:url("+background+")"}).append(
             $("<img>",{src:minUnitImage})
         );
-        var secTenDiv = $("<div>",{class:"col-1",style:"background:url("+background+")"}).append(
+        var secTenDiv = $("<div>",{class:"col-2",style:"background:url("+background+")"}).append(
             $("<img>",{src:secTenImage})
         );
-        var secUnitDiv = $("<div>",{class:"col-1",style:"background:url("+background+")"}).append(
+        var secUnitDiv = $("<div>",{class:"col-2",style:"background:url("+background+")"}).append(
             $("<img>",{src:secUnitImage})
         );
         var dotsDiv = $("<div>",{class:"col-1",style:"background:url("+background+")"}).append(

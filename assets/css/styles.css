@@ -75,10 +75,17 @@ h1,h2,h3,h4,h5{
     100% {opacity: 0;}
 }
 
-/*Resizing on smaller screens for buttons and selected text*/
+/*Resizing on smalle screens for buttons and selected text*/
 @media only screen and (max-width: 767px) {
     .btn,.udResizeText{
         font-size: small !important;
+    }
+}
+
+/*Resizing on mobile screens for buttons and selected text*/
+@media only screen and (max-width: 576px) {
+    .btn,.udResizeText{
+        font-size: x-small !important;
     }
 }
 

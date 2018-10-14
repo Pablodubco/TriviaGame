@@ -98,9 +98,9 @@
                         <img class="card-img-top mx-auto my-auto" src="assets/images/collage01.jpg" alt="Collage">
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <label class="input-group-text text-white bg-darker" for="numberQuestions">Number of questions</label>
+                                <label class="input-group-text text-white bg-darker udResizeText" for="numberQuestions">Number of questions</label>
                             </div>
-                            <select class="custom-select bg-black text-white text-center" id="numberQuestions">
+                            <select class="custom-select bg-black text-white text-center udResizeText" id="numberQuestions">
                                 <option selected class="bg-black text-white">50, or select...</option>
                                 <option class="bg-black text-white" value="5">5</option>
                                 <option class="bg-black text-white" value="10">10</option>
@@ -172,35 +172,39 @@
             <div class="col-md-8 col-12">
                 <div class="card mx-auto bg-darker">
                     <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-2 d-md-none d-block colDivScore">
+                        <div class="row justify-content-around">
+                            <div class="col-12 text-center" id="colDivQuestion">
+                                <img class="card-img-top mx-auto my-auto" src="assets/images/PlaceHolder.jpg" alt="Question Image">
+                                <p class="text-white udResizeText">Select the number of questions and press "Play" to start.</p>
+                            </div>    
+                        </div>
+                        <div class="row justify-content-around py-1">
+                            <div class="col-6 d-md-none d-block colDivScore">
                                 <div class="text-center text-white bg-dark udResizeText">Score</div>
                                 <div class="text-center text-white bg-darker udResizeText">0</div>
                             </div>
-                            <div class="col-md-12 col-8 text-center" id="colDivQuestion">
-                                <img class="card-img-top mx-auto my-auto" src="assets/images/PlaceHolder.jpg" alt="Question Image">
-                                <p class="text-white udResizeText">Select the number of questions and press "Play" to start.</p>
-                            </div>
-                            <div class="col-2 d-md-none d-block colDivStreak">
+                            <div class="col-6 d-md-none d-block colDivStreak">
                                 <div class="text-center text-white bg-dark udResizeText">Streak</div>
                                 <div class="text-center text-white bg-darker udResizeText">0 (x0)</div>
                             </div>
-                        </div>
-                        <div class="row justify-content-center py-1" id="rowDivClock">
-                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
-                                <img src="assets/images/clock/0.jpg">
-                            </div>
-                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
-                                <img src="assets/images/clock/0.jpg">
-                            </div>
-                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
-                                <img src="assets/images/clock/dots_on.jpg">
-                            </div>
-                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
-                                <img src="assets/images/clock/0.jpg">
-                            </div>
-                            <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
-                                <img src="assets/images/clock/0.jpg">
+                            <div class="col-md-6 col-sm-8 col-12">
+                                <div class="row justify-content-center py-1" id="rowDivClock">
+                                    <div class="col-2" style="background:url('assets/images/clock/clockbg.jpg');">
+                                        <img src="assets/images/clock/0.jpg">
+                                    </div>
+                                    <div class="col-2" style="background:url('assets/images/clock/clockbg.jpg');">
+                                        <img src="assets/images/clock/0.jpg">
+                                    </div>
+                                    <div class="col-1" style="background:url('assets/images/clock/clockbg.jpg');">
+                                        <img src="assets/images/clock/dots_on.jpg">
+                                    </div>
+                                    <div class="col-2" style="background:url('assets/images/clock/clockbg.jpg');">
+                                        <img src="assets/images/clock/0.jpg">
+                                    </div>
+                                    <div class="col-2" style="background:url('assets/images/clock/clockbg.jpg');">
+                                        <img src="assets/images/clock/0.jpg">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row" id="rowDivOptions">
