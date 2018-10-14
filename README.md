@@ -177,6 +177,8 @@ The quiz has multiple configurable settings in adition to a completely editable 
 | [Quiz properties index](#quiz-properties) | [Main index](#contents) |
 | :---: | :---: |
 
+___________________________________________
+
 ### General settings
 
 These affect the general behavior of the quiz, by affecting the parameters applied to all flow phases.
@@ -196,6 +198,8 @@ These affect the general behavior of the quiz, by affecting the parameters appli
 
 | [Quiz properties index](#quiz-properties) | [Main index](#contents) |
 | :---: | :---: |
+
+___________________________________________
 
 ### Display settings
 
@@ -268,6 +272,8 @@ Questions are a Bootstrap v4 _.card_ div with a title that specifies the number 
 | [Quiz properties index](#quiz-properties) | [Main index](#contents) |
 | :---: | :---: |
 
+___________________________________________
+
 ### Dynamic properties
 
 These are used as "variable" properties, that change during the course of the quiz, for example, to keep scores. Changing them does nothing, unless the quiz is already running and you want to mess with the game flow.
@@ -287,6 +293,8 @@ These are used as "variable" properties, that change during the course of the qu
 
 | [Quiz properties index](#quiz-properties) | [Main index](#contents) |
 | :---: | :---: |
+
+___________________________________________
 
 ### Questions collection
 
@@ -311,14 +319,18 @@ Questions
 | [Quiz properties index](#quiz-properties) | [Main index](#contents) |
 | :---: | :---: |
 
+___________________________________________
+
 ### Methods
 
+A list of methods with their arguments and general description. Inside the code they are split into the following sections:
 (under construction)
 
 - [General utility methods](#general-utility-methods)
 - [Quiz flow methods](#quiz-flow-methods) (under construction)
 - [Display methods](#quiz-flow-methods) (under construction)
 
+>**NOTE:** for further details concerning the methods, look inside the [app.js](/assets/javascript/app.js) file
 
 ___________________________________________________________________
 
