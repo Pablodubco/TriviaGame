@@ -17,7 +17,7 @@ A timed quiz "trivia" game constructed with the use of jQuery and timers with mu
   + [Display settings](#display-settings)
   + [Dynamic properties](#dynamic-properties)
   + [Questions collection](#questions-collection)
-  + [Methods](#methods) (Under constrction)
+  + [Methods](#methods) (Under construction)
 
 
 ## Current implementation
