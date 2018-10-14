@@ -166,7 +166,7 @@ The quiz has multiple configurable settings in adition to a completely editable 
    * The number of multiple-option answers available for each question is adjusted in the quiz property **_[intOptions](#general-settings)_**. 
    * The max number of right answers within the options is adjusted in the quiz property **_[intRightOptions](#general-settings)_**.
    * The program selects the minimum number between **_[intRightOptions](#general-settings)_** and **_[intOptions](#general-settings)_** answers from the **_arRightAnswers_** array property in the [question objects](#questions-collection). It's possible, then, to make a quiz where all answers are right answers, maybe for an informative promo material; or one where there are no right answers, for sadistic purposes.
-1.  Once the question is displayed, and the timer running, one of 3 possible outcomes is possible:
+1.  Once the question is displayed, and the timer running, one of 3 possible outcomes is possible.  
    * The user selects a right answer, evaluated inside the on-click event of the button: calls the method **_[mQuizRightAnswer](#methods)_**.
    * The user selects a wrong answer, evaluated inside the on-click event of the button: an additional information card will be displayed with the right answer, notifying the user of an incorrect choice, with text and an (optional) image. Calls the method **_[mQuizWrongAnswer](#methods)_**. Calls the method **_[mQuizWrongAnswer](#methods)_**.
    * The timer runs out: an additional information card will be displayed with the right answer, notifying the user of the time out, with text and an (optional) image. Calls the method **_[mQuizWrongAnswer](#methods)_**.
