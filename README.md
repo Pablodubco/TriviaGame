@@ -19,6 +19,7 @@ A timed quiz "trivia" game constructed with the use of jQuery and timers with mu
   + [Questions collection](#questions-collection)
   + [Methods](#methods) (Under construction)
 
+___________________________________________________
 
 ## Current implementation
 
@@ -38,6 +39,8 @@ Select the number of questions to tackle from the dropdown, or play with all 50 
 >* Many of these rules can be altered by changing strings or values in the [quiz object general settings](#general-settings).
 >* The questions, including their displayed graphics, timeouts, etc, can be adjusted in the question object properties of the [questions collection](#questions-collection).
 
+______________________________________________
+
 ## Implementing
 
 The game is self contained inside an object, but it's not completely independent from the HTML file layout:
@@ -52,6 +55,8 @@ The game is self contained inside an object, but it's not completely independent
   + [Required HTML tags](#required-html-tags)
   + [Required variable names](#required-variable-names)
   + [Starting up the quiz](#starting-up-the-quiz)
+
+_______________________________________
 
 ### Required HTML tags
 
@@ -89,6 +94,8 @@ Example
 | [Implementing index](#implementing) | [Main index](#contents) |
 | :---: | :---: |
 
+____________________________________________________
+
 ### Required variable names
 
 The quiz code looks for the following variable names, for controlling dynamic elements. In order:
@@ -118,6 +125,8 @@ Finally, the quiz object variable name _QuizObject_ should remain unchanged, lea
 | [Implementing index](#implementing) | [Main index](#contents) |
 | :---: | :---: |
 
+________________________________________
+
 ### Starting up the quiz
 
 Add a button, trigger, or any other tool, and call the object method **_mQuizStart([number of questions])_**. The argument determines the number of questions to fecth from the object's [question collection array](#questions-collection) for the current quiz.
@@ -139,6 +148,8 @@ $("#btnPlay").on("click",function(){
 | [Implementing index](#implementing) | [Main index](#contents) |
 | :---: | :---: |
 
+________________________________________________
+
 ## Quiz properties
 
 The quiz has multiple configurable settings in adition to a completely editable questions collection.
@@ -154,6 +165,8 @@ The quiz has multiple configurable settings in adition to a completely editable 
 
 | [Back to main index](#contents) |
 | :---: |
+
+____________________________________________________
 
 ### Understanding the flow
 
@@ -373,6 +386,131 @@ _returns: array_
 
 | [Methods index](#methods) | [Quiz properties index](#quiz-properties) |
 | :---: | :---: |
+
 _____________________________________________
 
-(Under construction)
+#### Quiz flow methods
+
+**mQuizStart(questions)**
+
+Sets initial conditions, fetches a specified number of question objects from the master collection and places them inside the **_arQuizQuestions_** array in the specified order; either shuffled or listed, depending on the [general settings properties](#general-settings).
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| questions | integer | A number representing the number of questions to display to the user. |
+
+
+**mQuizRunQuestion(questionIndex)**
+
+Sets the current question display, option buttons, and timer. Sets on-click events for the option buttons to trigger the **_mQuizRightAnswer_** when a correct option is chosen or **_mQuizWrongAnswer_** method when an incorrect question is chosen or the timer runs up.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| questionIndex | integer | The index in the **_arQuizQuestions_** array of the current question to display. |
+
+
+**mQuizRightAnswer(questionObject, answer, remainingSeconds)**
+
+Runs when a correct answer option is chosen, calls the mDisplayInfo method with "_right_" argument to update the UI.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| questionObject | object | A valid question object. |
+| answer | string | The selected answer option. |
+| remainingSeconds | integer | The number of seconds remaining on the timer when the correct answer was selected, for scoring purposes. |
+
+
+**mQuizWrongAnswer(questionObject, answer, remainingSeconds)**
+
+Runs when a correct answer option is chosen, calls the mDisplayInfo method to update the UI.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| questionObject | object | A valid question object. |
+| answer | string | The selected answer option. |
+| remainingSeconds | integer | The number of seconds remaining on the timer, if 0, calls the **_mDisplayInfo_** method with "_timeup_" argument, otherwise with "_wrong_" argumnt. |
+
+
+**mQuizFinish**
+
+Runs when there are no more questions left in the **_arQuizQuestions_** to display. Clears the option buttons and digital clock area. Displays the end message, score and an optional image.
+
+| [Methods index](#methods) | [Quiz properties index](#quiz-properties) |
+| :---: | :---: |
+
+______________________________________________
+
+#### Display mehtods
+
+**mDisplayQuestion(questionObject)**
+
+Updates display with current question information. Displays image, question text, timer, and options buttons.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| questionObject | object | A valid question object. |
+
+
+**mDisplayOptionButton(HtmlElement, option)**
+
+Creates an option button appended to the specified element with the specified text.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| HtmlElement | DOM object | The parent element to which the option button will be appended. |
+| option | string | The text and unique id of the button. |
+
+
+**mDisplayOptionIcons(questionObject)**
+
+Updates options' colors and icons to highlight correct answer after an option has been chosen.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| questionObject | object | A valid question object. |
+
+
+**mDisplayScores(score, streak)**
+
+Updates the scores display.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| score | integer | The updated score to update the display. |
+| streak | integer | The updated streak to update the display. |
+
+
+**mDisplayInfo(questionObject, answer, choiceResult, remainingTime)**
+
+Updates display with correct answer information
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| questionObject | object | A valid question object. |
+| answer | string | The selected answer option. |
+| choiseResult | string | Either "_right_", "_wrong_" or "_timeup_" depending on wether the user selected a right answer, wrong answer, or the timer ran out, respectively. |
+| remainingSeconds | integer | The number of seconds remaining on the timer, if 0, calls the **_mDisplayInfo_** method with "_timeup_" argument, otherwise with "_wrong_" argumnt. |
+
+**mAnimateScore:function(finalScore, seconds)**
+
+Animates score going up depending on remaining seconds, when the score depends on the time remaining.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| finalScore | integer | The updated score to update the display. |
+| seconds | integer | The remaining number of seconds. |
+
+
+**mDisplayDigitalClock(HtmlElement, seconds, mode)**
+
+Converts a given number of seconds into digits and updates the digital clock accordingly.
+
+| **Arguments** | **Format** | **Description** |
+| --- | --- | --- |
+| HtmlElement | DOM object | The parent element to which the digital clock will be appended. |
+| seconds | integer | The number of seconds to display. |
+| mode | string | When "_off_", the digital clock only displays dashes `-` instead of numbers. |
+
+
+| [Methods index](#methods) | [Quiz properties index](#quiz-properties) |
+| :---: | :---: |

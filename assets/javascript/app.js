@@ -61,7 +61,7 @@ var QuizObject = {
     boolOrderedQuestions:false, // When false, the questions will be selected at random. If true, the program gives an ordered list of questions specified in the arQuizQuestions array.
     EasterEgg: false,           // Easter egg. If true, skips quiz and shows all answer's gifs in sequence.
     arOrderedQuestions:[],      // An array of string elements. Only used if boolOrderedQuestions is 'true', contains the unique identifiers strId of the questions to be presented in order.
-    intWait: 10,                // The number of seconds to wait before showing the next question, after an answer is selected or the timer runs out (while the additional info card is being displayed)
+    intWait: 8,                // The number of seconds to wait before showing the next question, after an answer is selected or the timer runs out (while the additional info card is being displayed)
 
 // General quiz strings________________________________________________________________
     strQuestionSectionID: "headerQuestions",                           // Id of the questions area, for changing the window focus when beginning the quiz.
@@ -789,7 +789,7 @@ var QuizObject = {
             this.mQuizRunQuestion(this.intCurrentQuestion); // Runs the quiz, starting from question index 0.
         }
     },
-
+    
     mQuizRunQuestion:function(questionIndex = 0){ // Sets the question display, buttons, and timer.
         var quiz = this;
         var questionObject = this.arQuizQuestions[questionIndex];
@@ -856,7 +856,7 @@ var QuizObject = {
             quiz.mDisplayOptionIcons(questionObject);
         });
     },
-
+    
     mQuizRightAnswer:function(questionObject = new Object,answer = "",remainingSeconds = 0){
         var quiz = this;
     // Adjust score
@@ -886,7 +886,7 @@ var QuizObject = {
     // Display aditional info
         this.mDisplayInfo(questionObject,answer,"right",Math.round(remainingSeconds/10));
     },
-
+    
     mQuizWrongAnswer:function(questionObject = new Object,answer = "",remainingSeconds = 0){
         if (this.boolStreakScore) this.intStreakScore = 0; // Resets streak score if enabled
         this.mDisplayScores(this.intScore,this.intStreakScore); // Update scores display
@@ -898,7 +898,7 @@ var QuizObject = {
             this.mDisplayInfo(questionObject,answer,"wrong",0); // Display aditional info
         }
     },
-
+    
     mQuizFinish:function(){ // Runs when there are no more questions
         rowDivClock.empty(); // Clears the digital clock display
         rowDivOptions.empty(); // Clears the option buttons
@@ -939,7 +939,7 @@ var QuizObject = {
         if (imgPosition = "bottom") colDivQuestion.append(divText,divImg);
         else colDivQuestion.append(divImg,divText);
     },
-
+    
     mDisplayOptionButton:function(HtmlElement,option = ""){ // Creates an option button
         var quiz = this;
         var optionButton = $("<div>",{class:"col-12"}).append(
@@ -949,7 +949,7 @@ var QuizObject = {
         );
         HtmlElement.append(optionButton);
     },
-
+    
     mDisplayOptionIcons:function(questionObject = new Object){ // Updates options' colors and icons to highlight correct answer
         for(var i = 0; i < questionObject.arRightAnswers.length;i++){
             var rightAnswer = questionObject.arRightAnswers[i];
@@ -962,7 +962,7 @@ var QuizObject = {
             $("i[udanswer='"+rightAnswer+"']").addClass(iconClassRight);
         }
     },
-
+    
     mDisplayScores:function(score = 0, streak = 0){ // Updates the scores display.
         var txtScore = this.strScore;
         var txtStreak = this.strStreak;
@@ -980,7 +980,7 @@ var QuizObject = {
             colDivStreak.append(streakDivTitle,streakDivNumber);
         }
     },
-
+    
     mDisplayInfo: function(questionObject = new Object, answer = "", choiceResult = "", remainingTime = 0){ // Updates display with correct answer information
         colDivQuestion.empty(); // Clears the image and text display for the question
         var quiz = this;
@@ -1022,7 +1022,7 @@ var QuizObject = {
         },time);
         quiz.arTimers.push(timeout);
     },
-
+    
     mAnimateScore:function(finalScore=0,seconds){ // Animates score going up depending on remaining seconds
         var quiz = this;
         var stepScore = (finalScore - quiz.intScore)/(seconds);
@@ -1077,10 +1077,6 @@ var QuizObject = {
         );
         HtmlElement.empty();
         HtmlElement.append(minTenDiv,minUnitDiv,dotsDiv,secTenDiv,secUnitDiv);
-    },
-
-    mDisplayScoreCard: function(){
-
     },
 
 // Miscellaneous. The easter egg -------------------------------------------------------------------------
