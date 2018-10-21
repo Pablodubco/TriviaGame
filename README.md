@@ -45,8 +45,8 @@ ______________________________________________
 
 The game is self contained inside an object, but it's not completely independent from the HTML file layout:
 
-* It uses the [Bootstrap v4]() css framework.
-* It requires [jQuery]() libraries for dynamically generating DOM elements.
+* It uses the [Bootstrap v4](https://getbootstrap.com/docs/4.1/getting-started/introduction/) css framework.
+* It requires [jQuery](https://jquery.com/) libraries for dynamically generating DOM elements.
 * The quiz object provides several properties for styling the dynamically generated elements.
 * Anything that cannot be styled by changing classes or CSS (like parent and child elements), must be edited by alering the code.
 
