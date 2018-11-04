@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trivia Game</title>
+  <title>Timed Quiz App</title>
 
   <!-- Link to the jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -28,8 +28,35 @@
 -->
 
 <!--_________________________Navbar BEGIN____________________________-->
-    <nav class="navbar navbar-expand-md navbar-dark bg-darker">
-        <a class="navbar-brand text-white" href="#">Trivia Game</a>
+<nav class="navbar navbar-expand-md navbar-dark bg-darker">
+        <a class="navbar-brand text-white" href="#">Timed Quiz App</a>
+        <!--Collapsible hamburguer button with About, Portfolio and Contact links-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarElements" aria-controls="navbarElements" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--Navbar elements and links-->
+        <div class="collapse navbar-collapse" id="navbarElements">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle udDropDown d-none d-md-block" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About
+                        </a>
+                        <div class="dropdown-menu bg-darker" aria-labelledby="dropdownMenuButton">
+                            <h6 class="dropdown-header text-white">Trivianimation!</h6>
+                            <a class="dropdown-item nav-item text-white" href="https://pablodubco.github.io"><small>Pablo Dubcovsky <i class="fa fa-external-link"></i></small></a>
+                            <p class="dropdown-header text-white py-0 text-right"><small>2018</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-md-none d-block" href="https://pablodubco.github.io"> Pablo Dubcovsky - 2018 <i class="fa fa-external-link"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Pablodubco/TriviaGame"> Project Page <i class="fa fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <div id="FooterThinLine"></div>
 <!--_________________________Navbar END____________________________-->
@@ -236,7 +263,7 @@
 
 <footer class="footer">
     <div id="FooterThinLine"></div>
-    <div class="bg-darker text-white text-center" id="FooterThickLine">Copyright ©</div>
+    <div class="bg-darker text-white text-center" id="FooterThickLine">Copyright © Pablo Dubcovsky 2018</div>
 </footer>
     
 <!--Game JavaScript-->

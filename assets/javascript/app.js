@@ -13,7 +13,7 @@ window.onload = function(){
         console.log(numberQuestions);
         QuizObject.mQuizStart(numberQuestions);
     });
-
+// Easter Egg code
     $(".udBtnPlaceHolder").on("click",function(){
         var btn = $(this);
         var text = btn.text();

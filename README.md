@@ -1,6 +1,6 @@
-# TRIVIA GAME
+# TIMED QUIZ APP
 
-A timed quiz "trivia" game constructed with the use of jQuery and timers with multiple configurable properties for the questions, answers, display, and scoring system. Allowing to change the theme and the target audience of the quiz.
+A timed quiz "trivia" game constructed with the use of jQuery and timers with multiple configurable properties for the questions, answers, display, and scoring system. This makes it possible to entirely change the theme, purpose, and target audience of the quiz.
 
 [Try it here](https://pablodubco.github.io/TriviaGame/)
 
@@ -17,13 +17,13 @@ A timed quiz "trivia" game constructed with the use of jQuery and timers with mu
   + [Display settings](#display-settings)
   + [Dynamic properties](#dynamic-properties)
   + [Questions collection](#questions-collection)
-  + [Methods](#methods) (Under construction)
+  + [Methods](#methods)
 
 ___________________________________________________
 
 ## Current implementation
 
-The current implementation has the following rules:
+The current implementation has the following settings:
 
 * A question and 4 possible answers will be shown to the player. Only 1 answer is correct.
 * Each question has a 20 second timer to select an answer.
@@ -38,6 +38,9 @@ Select the number of questions to tackle from the dropdown, or play with all 50 
 >**NOTE:** 
 >* Many of these rules can be altered by changing strings or values in the [quiz object general settings](#general-settings).
 >* The questions, including their displayed graphics, timeouts, etc, can be adjusted in the question object properties of the [questions collection](#questions-collection).
+
+| [Back to Main index](#contents) |
+| :---: |
 
 ______________________________________________
 
@@ -55,6 +58,9 @@ The game is self contained inside an object, but it's not completely independent
   + [Required HTML tags](#required-html-tags)
   + [Required variable names](#required-variable-names)
   + [Starting up the quiz](#starting-up-the-quiz)
+
+| [Back to Main index](#contents) |
+| :---: |
 
 _______________________________________
 
@@ -133,11 +139,13 @@ Add a button, trigger, or any other tool, and call the object method **_mQuizSta
 
 Example:
 
+HTML:
 ```html
 <div class="bg-darker py-5">
     <button type="button" class="btn btn-outline-danger w-50" id="btnPlay">Play! <i class="fa fa-play"></i></button>
 </div>
 ```
+JavaScript:
 ```javascript
 $("#btnPlay").on("click",function(){
     numberQuestions = $("#numberQuestions").val().trim();
@@ -161,7 +169,7 @@ The quiz has multiple configurable settings in adition to a completely editable 
 + [Display settings](#display-settings)
 + [Dynamic properties](#dynamic-properties)
 + [Questions collection](#questions-collection)
-+ [Methods](#methods) (Under constrction)
++ [Methods](#methods)
 
 | [Back to main index](#contents) |
 | :---: |
@@ -231,6 +239,7 @@ Change the displayed texts in the HTML file
 | strScore | string | String to display the "Score" title for the dynamic score `<div>`. |
 | strStreak | string | String to display the "Streak" title for the dynamic streak `<div>`. |
 
+
 **General display settings**
 
 CSS and classes for styling the dynamically generated elements.
@@ -248,6 +257,7 @@ CSS and classes for styling the dynamically generated elements.
 | strChoiceRightIcon| string | Icon class that is replaced in the choice buttons to show the right choice. |
 | strChoiceWrongIcon| string | Icon class that is replaced in the choice buttons to show the wrong choice. |
 
+
 **Quiz finish display settings**
 
 Specific display settings for the final message when the quiz is done
@@ -261,6 +271,7 @@ Specific display settings for the final message when the quiz is done
 | strQuizFinishScoreBtnClass | string | The class of the restart button when quiz is finished. |
 | strQuizFinishRestartIconCLass | string | Class of the icon for the restart button. |
 
+
 **Digital clock**
 
 Specific display settings for the digital clock, mainly, the paths of the images it uses.
@@ -272,6 +283,7 @@ Specific display settings for the digital clock, mainly, the paths of the images
 | strClockBgImage| string | Background image for the digital clock. |
 | strClockDotsImage| string | The image for the colons `:` that separate minutes and seconds. |
 | strClockImageOff| string | The image for a dash `-` to represent "no score" when choosing wrong answer. |
+
 
 **Questions**
 
@@ -311,9 +323,8 @@ ___________________________________________
 
 ### Questions collection
 
-Questions
-* The arQuestions game property is an array containing the collection of questions.
-* Questions are objects contained inside the arQuestions array.
+* The **_arQuestions_** game property is an array containing the collection of questions.
+* Questions are objects contained inside the **_arQuestions_** array.
 * Question objects have the following properties:
 
 | **Property** | **Format** | **Description** |
@@ -340,10 +351,10 @@ A list of methods with their arguments and general description. Inside the code 
 (under construction)
 
 - [General utility methods](#general-utility-methods)
-- [Quiz flow methods](#quiz-flow-methods) (under construction)
-- [Display methods](#quiz-flow-methods) (under construction)
+- [Quiz flow methods](#quiz-flow-methods)
+- [Display methods](#display-methods)
 
->**NOTE:** for further details concerning the methods, look inside the [app.js](/assets/javascript/app.js) file
+>**NOTE:** for further details concerning the methods, look inside the [app.js](assets/javascript/app.js) file
 
 ___________________________________________________________________
 
@@ -440,7 +451,7 @@ Runs when there are no more questions left in the **_arQuizQuestions_** to displ
 
 ______________________________________________
 
-#### Display mehtods
+#### Display methods
 
 **mDisplayQuestion(questionObject)**
 
